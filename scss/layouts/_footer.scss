@@ -1,0 +1,60 @@
+@use"../utils/variables" as var;
+
+.footer {
+    grid-row: 3/4;
+    background-color: var(--second-color);
+    padding: 2rem 4rem;
+    background-image: url(/img/12085270_20944095.png);
+    background-repeat: no-repeat;
+    background-position: center 55px;
+    background-size: 250px;
+
+    @media screen and (min-width:var.$bp-tablet) {
+        background-position: 0 center;
+    }
+
+    &__direction {
+        @media screen and (min-width:var.$bp-tablet) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+    }
+
+    &__logo {
+        width: 250px;
+        height: 250px;
+
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        text-align: center;
+    }
+
+    &-menu__element a {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    &__privacy-policy {
+        background-image: url(/img/resume-img.png);
+        background-size: 80% 80%;
+        background-repeat: no-repeat;
+        background-position: center 20px;
+        background-size: contain;
+        height: 35rem;
+        text-align: center;
+
+        &--text {
+            font-size: 1.7rem;
+        }
+
+        &--link {
+            font-size: 1.2rem;
+        }
+    }
+}

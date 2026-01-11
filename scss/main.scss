@@ -1,0 +1,23 @@
+@use "./base";
+
+@use "./components/_carosel.scss";
+
+@use "./components/_icon.scss";
+@use "./components/_hidden.scss";
+@use"./components/main-block";
+@use"./components/min-menu";
+@use"./components/section";
+
+@use "./layouts/about";
+@use "./layouts/connection.scss";
+@use "./layouts/contact";
+@use"./layouts/footer";
+@use "./layouts/header-menu";
+@use "./layouts/header";
+@use "./layouts/container";
+@use "./layouts/info";
+@use "./layouts/interests";
+@use "./layouts/skill";
+
+@use "./utils/fonts";
+@use"./utils/variables";

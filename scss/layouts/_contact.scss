@@ -1,0 +1,186 @@
+@use"../utils/variables" as var;
+
+.contact {
+
+
+    &__container {
+        /*
+        */
+        margin-bottom: 2rem;
+
+        @media screen and (min-width:var.$bp-tablet) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media screen and (min-width:var.$bp-desktop) {
+            gap: 50px;
+
+        }
+    }
+
+    &__address {
+        display: grid;
+        grid-column: 1/2;
+        grid-template-rows: max-content;
+        grid-row: max-content;
+        grid-template-rows: subgrid;
+        grid-row: 1 / 1;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        @media screen and (min-width:var.$bp-tablet) {
+            margin-bottom: 0rem;
+        }
+
+        &--block {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            align-items: center;
+            text-align: center;
+
+            @media screen and (min-width:var.$bp-tablet) {
+                text-align: left;
+            }
+        }
+    }
+
+    &-conteiner__form {
+        display: grid;
+        grid-column: 2/4;
+        grid-row: 1/1;
+        grid-template-rows: subgrid;
+        grid-row: 1/1;
+        padding: 1rem;
+
+        @media screen and (min-width:var.$bp-desktop) {
+            max-width: 70rem;
+            justify-self: end;
+            width: 100%;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+
+        width: 100%;
+    }
+
+    &__form-block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media screen and (max-width:var.$bp-tablet) {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
+
+    &__name,
+    &__email,
+    &__textarea {
+        border: none;
+        border-bottom: 1px solid black;
+        background-color: var(--second-color);
+
+    }
+
+    &__textarea {
+        height: 6rem;
+        margin-bottom: 3rem;
+    }
+
+
+    &__name,
+    &__email {
+        width: 48%;
+
+        @media screen and (max-width:var.$bp-tablet) {
+            width: 100%;
+        }
+    }
+
+    &__name,
+    &__email,
+    &__textarea {
+        padding: 1.5rem 0;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text-color);
+    }
+
+    &__name::placeholder,
+    &__email::placeholder,
+    &__textarea::placeholder {
+        color: white;
+        font-size: 2rem;
+    }
+
+    &__button {
+        width: min-content;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 1rem;
+        border-radius: 3rem;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+        &:hover {
+            cursor: pointer;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%);
+            background: linear-gradient(45deg, rgb(78, 156, 83), rgb(80, 67, 151));
+            z-index: -2;
+
+        }
+
+        &:hover::before {
+            animation: button_animation 1s linear infinite alternate;
+        }
+
+
+    }
+
+    &__address,
+    &-conteiner__form {
+        background-color: var(--first-color);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 2px black;
+    }
+
+}
+
+@keyframes button_animation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}

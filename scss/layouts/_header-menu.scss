@@ -1,0 +1,60 @@
+@use"../utils/variables" as var;
+
+.header-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+
+
+    &__items {
+
+        display: none;
+        color: white;
+        gap: 2rem;
+
+        @media screen and (min-width:var.$bp-desktop ) {
+            display: flex;
+        }
+
+
+    }
+
+    &__link {
+
+        font-family: "Bitter", sans-serif;
+        font-weight: 600;
+        font-size: min(2.5rem, calc(2rem + 1vw));
+        position: relative;
+        display: inline-block;
+        transition: all 0.5s ease;
+
+
+        @media screen and (min-width:var.$bp-desktop ) {
+            display: inline-block;
+            width: max-content;
+            height: min-content;
+        }
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            background: linear-gradient(90deg, white, var(--second-color));
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}

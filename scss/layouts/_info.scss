@@ -1,0 +1,44 @@
+@use"../utils/variables" as var;
+
+.info {
+    padding: 2rem 0;
+    background-color: var(--first-color);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 2px black;
+
+    @media screen and (min-width:var.$bp-tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__location {
+        text-align: center;
+    }
+
+    &__schedule {
+        padding: 1rem;
+
+    }
+
+    &__country,
+    &__year,
+    &__title,
+    &__day,
+    &__hours {
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+
+
+    &__socials {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+
+
+    }
+
+}
