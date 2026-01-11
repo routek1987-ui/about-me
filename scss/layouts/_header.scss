@@ -1,0 +1,45 @@
+@use"../utils/variables" as var;
+
+.header {
+    background-color: var(--four-color);
+    grid-column: 1/13;
+    grid-column: 2/12;
+    grid-row: 1/2;
+
+
+
+    &-container {
+        padding: 4rem 2rem;
+        display: flex;
+        position: relative;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        max-width: inherit;
+
+        @media screen and (max-width:var.$bp-desktop ) {
+            justify-content: right;
+
+
+        }
+
+    }
+
+    &__logo {
+        position: absolute;
+        left: 0;
+        width: 150px;
+        height: auto;
+        color: white;
+        display: flex;
+        align-items: center;
+        border: 1px solid blackт;
+    }
+
+
+    &_nav {
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+    }
+}
